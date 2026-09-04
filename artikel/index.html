@@ -17,7 +17,6 @@ body {
   font-size: 18px;
 }
 
-/* === HERO === */
 .hero {
   background: linear-gradient(135deg, #0d2137 0%, #1a3a2a 50%, #0d2137 100%);
   padding: 100px 24px 80px;
@@ -66,7 +65,6 @@ body {
 }
 .hero .meta span { margin: 0 12px; }
 
-/* === ARTICLE === */
 .article {
   max-width: 720px;
   margin: 0 auto;
@@ -173,46 +171,6 @@ body {
 .article .stat-card .num { font-size: 1.8em; color: #c8a84e; font-weight: 700; }
 .article .stat-card .label { font-size: 0.85em; color: #6a6a6a; margin-top: 4px; }
 
-.article .timeline {
-  position: relative;
-  padding-left: 32px;
-  margin: 28px 0;
-}
-.article .timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #c8a84e;
-}
-.article .timeline .event {
-  position: relative;
-  margin-bottom: 24px;
-}
-.article .timeline .event::before {
-  content: '';
-  position: absolute;
-  left: -28px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background: #c8a84e;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-.article .timeline .event .year {
-  font-weight: 700;
-  color: #1a3a2a;
-  font-size: 0.95em;
-}
-.article .timeline .event .desc {
-  color: #555;
-  font-size: 0.98em;
-  margin-top: 2px;
-}
-
 .article .closing {
   background: linear-gradient(135deg, #1a3a2a, #0d2137);
   color: #e0e0e0;
@@ -241,7 +199,50 @@ body {
   font-size: 1.5em;
 }
 
-/* === FOOTER === */
+.article .photo-ref {
+  background: rgba(127,184,127,0.08);
+  border: 1px solid rgba(127,184,127,0.2);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 0.92em;
+  color: #2a5a3a;
+}
+.article .photo-ref::before {
+  content: '📸 ';
+}
+
+.article .person-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.article .person-card .card {
+  background: rgba(127,184,127,0.06);
+  border: 1px solid rgba(127,184,127,0.15);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.article .person-card .card .name {
+  font-weight: 700;
+  color: #1a3a2a;
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+.article .person-card .card .years {
+  color: #c8a84e;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.article .person-card .card .desc {
+  color: #555;
+  font-size: 0.88em;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
 .footer {
   text-align: center;
   padding: 40px 24px;
@@ -256,6 +257,7 @@ body {
   .article { padding: 32px 16px 60px; }
   .article p { font-size: 1em; }
   .article blockquote { padding: 16px 20px; }
+  .article .person-card { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -272,7 +274,7 @@ body {
 
 <p class="intro">Jumat itu, aku berdiri di tengah kerumunan jamaah yang memenuhi Masjid Pudong — Shanghai Pudong Mosque (上海浦东清真寺). Shaf sudah penuh. Jamaah meluber sampai ke halaman. Dan di situlah, di antara gedung-gedung pencakar langit yang menjulang seperti hutan beton, aku merasakan sesuatu yang tidak bisa dijelaskan dengan kata-kata.</p>
 
-<p>Masjid ini berdiri di distrik Pudong — jantung finansial Shanghai, tempara Shanghai Tower dan gedung-gedung berlapis kaca berdiri berdampingan. Di luar masjid, kota berderu: mobil listrik meluncur tanpa suara, metro bawah tanah membawa jutaan manusia, neon-neon menyala meski hari belum gelap. Tapi di dalam masjid, waktu seolah berhenti.</p>
+<p>Masjid ini berdiri di distrik Pudong — jantung finansial Shanghai, tempat Shanghai Tower dan gedung-gedung berlapis kaca berdiri berdampingan. Di luar masjid, kota berderu: mobil listrik meluncur tanpa suara, metro bawah tanah membawa jutaan manusia, neon-neon menyala meski hari belum gelap. Tapi di dalam masjid, waktu seolah berhenti.</p>
 
 <p>Ada pedagang Uyghur dengan kopiah putih. Mahasiswa Hui dari Ningxia yang kuliah teknik di universitas lokal. Keluarga Kazakh yang baru pindah ke Shanghai untuk bekerja. Dan — yang paling mengejutkan — beberapa warga Shanghai berusia lanjut yang ternyata sudah Muslim sejak lahir. Mereka keturunan komunitas Muslim yang sudah tinggal di kota ini ratusan tahun. Generasi demi generasi, tanpa pernah pergi.</p>
 
@@ -287,7 +289,7 @@ body {
 <!-- === BAB I === -->
 <h2><span class="num">I</span> Ketika Duta Pertama Tiba</h2>
 
-<p>Tahun 651 Masehi. Kekhalifahan Islam baru berusia 19 tahun. Nabi Muhammad SAW baru wafat sembilan tahun lalu. Abu Bakar dan Umar sudah tiada. Kini giliran <span class="person">Utsman bin Affan</span> yang memimpin umat.</p>
+<p>Tahun 651 Masehi. Kekhalifahan Islam baru berusia 19 tahun. Nabi Muhammad SAW baru wafat sembilan tahun lalu. Abu Bakar dan Umar sudah tiada. Kini giliran Utsman bin Affan yang memimpin umat.</p>
 
 <p>Di ujung dunia sana, Dinasti Tang sedang berada di puncak keemasannya. Kaisar Gaozong duduk di singgasana Chang'an — kota terbesar di dunia saat itu, lebih ramai dari Roma atau Konstantinopel. Jalur Sutra menghubungkan Chang'an dengan Damaskus, Baghdad, dan Kairo. Sutra, rempah, dan emas mengalir tanpa henti di antara dua peradaban besar.</p>
 
@@ -308,7 +310,7 @@ body {
 
 <p>Mereka datang untuk berdagang. Tapi mereka jatuh cinta.</p>
 
-<p>Guangzhou, pelabuhan di selatan China, menjadi rumah pertama. Para pedagang Arab dan Persia menetap di kawasan khusus — seperti <em>Chinatown</em> versi terbalik. Mereka disebut <strong>Fanke (蕃客)</strong> — "tamu asing." Diizinkan berdagang, diizinkan beribadah, diizinkan membangun masjid.</p>
+<p>Guangzhou, pelabuhan di selatan China, menjadi rumah pertama. Para pedagang Arab dan Persia menetap di kawasan khusus — seperti Chinatown versi terbalik. Mereka disebut <strong>Fanke (蕃客)</strong> — "tamu asing." Diizinkan berdagang, diizinkan beribadah, diizinkan membangun masjid.</p>
 
 <p>Masjid pertama berdiri di Guangzhou, sekitar tahun 627 Masehi. Konon dibangun oleh <span class="person">Sa'ad bin Abi Waqqas</span> sendiri — sahabat Nabi yang legendaris, paman Rasulullah dari jalur ibu. Masjid itu bernama <strong>Huaisheng (怀圣寺)</strong> — "Masjid Peringatan Sang Nabi." Menara tipisnya menjulang di tengah kota tua, dan — dalam ironi yang indah — menjadi menara masjid tertua yang masih berdiri di seluruh China.</p>
 
@@ -323,7 +325,7 @@ body {
 
 <p>Lalu datanglah Mongol.</p>
 
-<p>Tahun 1271, <span class="person">Kubilai Khan</span> — cucu Genghis Khan — mendirikan Dinasti Yuan dan menyatakan diri sebagai Kaisar China. Dunia bergetar. Tapi bagi umat Islam di China, era Mongol justru membawa angin segar yang tidak pernah mereka bayangkan.</p>
+<p>Tahun 1271, Kubilai Khan — cucu Genghis Khan — mendirikan Dinasti Yuan dan menyatakan diri sebagai Kaisar China. Dunia bergetar. Tapi bagi umat Islam di China, era Mongol justru membawa angin segar yang tidak pernah mereka bayangkan.</p>
 
 <p>Kubilai Khan, meskipun beragama Buddha, sangat terbuka terhadap Muslim. Ia bahkan memberi mereka status khusus: <strong>Semu (色目)</strong> — "mata berwarna" — yang menempatkan Muslim lebih tinggi dari orang Han dalam hierarki sosial Mongol.</p>
 
@@ -348,9 +350,9 @@ body {
 
 <p>Tahun 1405. Dinasti Ming sudah berdiri. Mongol sudah pergi. Tapi warisan toleransi tetap hidup.</p>
 
-<p>Kaisar Yongle, kaisar ketiga Dinasti Ming, mempercayakan armada terbesar di dunia kepada seorang Muslim Hui bernama <span class="person">Zheng He (郑和)</span>.</p>
+<p>Kaisar Yongle, kaisar ketiga Dinasti Ming, mempercayakan armada terbesar di dunia kepada seorang Muslim Hui bernama Zheng He (郑和).</p>
 
-<p>Zheng He bukan sembarang laksamana. Ia lahir sebagai <strong>Ma He</strong> — nama Muslim — di Yunnan, keturunan keluarga Muslim yang loyal kepada Mongol. Diambil sebagai kasir oleh pasukan Ming saat masih kecil, ia naik pangkat berkat kecerdasan dan keberaniannya.</p>
+<p>Zheng He bukan sembarang laksamana. Ia lahir sebagai <strong>Ma He</strong> — nama Muslim — di Yunnan, keturunan keluarga Muslim yang loyal kepada Mongol. Diambil sebagai kasim oleh pasukan Ming saat masih kecil, ia naik pangkat berkat kecerdasan dan keberaniannya.</p>
 
 <p>Armadanya? Raksasa.</p>
 
@@ -391,32 +393,61 @@ body {
 
 <p>Kembali ke Masjid Pudong.</p>
 
-<p>Setelah sholat Jumat selesai, aku duduk di halaman masjid. Udara Shanghai bulan September masih terasa panas dan lembap. Di sekelilingku, jamaah saling menyapa — beberapa dalam bahasa Mandarin, beberapa dalam bahasa Uyghur, beberapa dalam bahasa Arab yang fasih.</p>
+<p>Setelah sholat Jumat selesai, aku berkeliling masjid. Udara Shanghai bulan September masih terasa panas dan lembap. Di sekelilingku, jamaah saling menyapa — beberapa dalam bahasa Mandarin, beberapa dalam bahasa Uyghur, beberapa dalam bahasa Arab yang fasih.</p>
 
-<p>Seorang kakek Hui duduk di sebelahku. Namanya Ma Zhengde — "Ma" adalah marga klasik Muslim Hui, konon berasal dari "Muhammad." Usianya 78 tahun. Keluarganya sudah Muslim di Shanghai selama... dia sendiri tidak tahu berapa generasi.</p>
+<p>Lalu aku menemukan sesuatu yang tidak kusangka.</p>
 
-<blockquote>
-"Kakek saya bilang, kakeknya kakeknya sudah Muslim. Mungkin sudah 400 tahun. Mungkin lebih. Tapi Islam di China? Jauh lebih tua dari itu, Nak."
-<span class="attribution">— Ma Zhengde, 78 tahun, Muslim Hui Shanghai</span>
-</blockquote>
+<p>Di dalam kompleks masjid, ada ruang pameran. Panel-panel besar berisi sejarah Islam di Shanghai — bukan sejarah yang kutulis dari buku, tapi sejarah yang mereka simpan sendiri. Sejarah yang mereka hidupi.</p>
 
-<p>Aku bertanya: pernahkah dia merasa terasing sebagai Muslim di China?</p>
+<div class="photo-ref">Panel pameran "Belt and Road Initiative: Peluang Baru Pertukaran Budaya China-Arab" — dokumentasi perjalanan diplomatik Shanghai Islamic Association ke India, Pakistan, Malaysia, Iran, Mesir, Turki (1981–2012)</div>
 
-<p>Dia tertawa.</p>
+<p>Panel pertama menunjukkan catatan perjalanan Shanghai Islamic Association ke berbagai negara sejak 1981: India dan Pakistan, Malaysia, Iran, Singapura, Mesir, Turki. Mereka bukan hanya menjalankan ibadah — mereka membangun jembatan diplomatik antara China dan dunia Islam. Tahun 2012, mereka bahkan mengadakan "Pameran Budaya Islam China" — memperkenalkan Islam China ke mata dunia.</p>
 
-<blockquote>
-"Nak, Islam sudah di China lebih lama dari Dinasti Ming. Lebih lama dari Dinasti Yuan. Lebih lama dari kebanyakan negara di Eropa. Kami bukan pendatang. Kami <em>adalah</em> China."
-<span class="attribution">— Ma Zhengde</span>
-</blockquote>
+<div class="photo-ref">Panel dialog antar-agama — foto hitam-putih besar dari era modern awal Shanghai, dengan bendera Amerika di latar (kemungkinan area konsesi asing)</div>
 
-<p>Kalimat itu menghantamku.</p>
+<p>Panel kedua lebih mengejutkan lagi. Ada foto hitam-putih besar dari era modern awal Shanghai — kemungkinan di area konsesi asing, dengan bendera Amerika terlihat di latar. Di bawahnya, terpampang koran berjudul <strong>"古兰经的教训" (Ajaran Al-Quran)</strong> dan majalah <strong>"宗教丛谈" (Dialog Antar-Agama)</strong>. Tokoh-tokoh Muslim Shanghai seperti <span class="person">Ha Shaofu</span> aktif mengadakan dialog dengan pemeluk agama lain — memberikan ceramah di Shang Xian Tang dan asosiasi pemuda Kristen.</p>
 
-<p>Aku teringat <span class="person">Sa'ad bin Abi Waqqas</span> yang datang 1.400 tahun lalu — bukan dengan pedang, tapi dengan salam. Aku teringat <span class="person">Sayyid Ajall</span> yang membawa peradaban ke Yunnan. Aku teringat <span class="person">Zheng He</span> yang mengarungi lautan dengan 27.800 pelaut Muslim.</p>
-
-<p>Dan sekarang, aku duduk di halaman masjid di Shanghai — kota paling modern di China, kota dengan gedung tertinggi di dunia, kota dengan kereta tercepat di dunia — dan mendengar adzan Ashar berkumandang.</p>
+<p>Aku terdiam. Ternyata, Muslim Shanghai sudah melakukan dialog antar-agama sejak era modern awal — jauh sebelum konsep "toleransi beragama" menjadi tren global.</p>
 
 <!-- === BAB VII === -->
-<h2><span class="num">VII</span> Pelajaran dari 1.400 Tahun</h2>
+<h2><span class="num">VII</span> Tiga Tokoh yang Menggetarkan</h2>
+
+<p>Panel ketiga membawa cerita yang lebih personal lagi. Berjudul <strong>"Kontribusi untuk Diplomatik China Baru"</strong>, panel ini menampilkan tiga tokoh Muslim Shanghai yang kontribusinya luar biasa.</p>
+
+<div class="person-card">
+  <div class="card">
+    <div class="name">Wang Ziping</div>
+    <div class="years">1881–1973</div>
+    <div class="desc">Guru silat legendaris, dijuluki "Raja Kekuatan." Tampil memperagakan silat di hadapan pemimpin Soviet Khrushchev sebagai duta budaya China.</div>
+  </div>
+  <div class="card">
+    <div class="name">He Keming</div>
+    <div class="years">1892–1989</div>
+    <div class="desc">Pewaris budaya nasional Shanghai, dijuluki "Raja Lentera." Seniman lentera yang karyanya diakui sebagai warisan budaya tak benda Tiongkok.</div>
+  </div>
+  <div class="card">
+    <div class="name">Ma Renbin</div>
+    <div class="years">1919–2004</div>
+    <div class="desc">Pemimpin pendidikan agama Islam di Shanghai selama puluhan tahun. Membentuk generasi ulama dan guru ngaji.</div>
+  </div>
+</div>
+
+<p>Wang Ziping, seorang Muslim, jadi guru silat yang dihormati di seluruh China. He Keming, seorang Muslim, menciptakan seni lentera yang jadi warisan nasional. Ma Renbin, seorang Muslim, mendidik generasi demi generasi.</p>
+
+<p>Ini bukan cerita tentang minoritas yang bertahan. Ini cerita tentang warga negara yang membangun peradaban.</p>
+
+<p>Ada satu foto lagi yang membuatku berhenti bergerak: foto <span class="person">Zhou Enlai</span> berpidato di <strong>Konferensi Bandung 1955</strong> — konferensi bersejarah yang melahirkan Gerakan Non-Blok. Di balik layar diplomatik itu, ada peran Muslim Shanghai yang membantu memperkenalkan China baru ke dunia Arab. Mereka adalah jembatan — bukan hanya antara China dan Islam, tapi antara China dan seluruh Dunia Ketiga.</p>
+
+<div class="photo-ref">Panel "Shanghai sebagai Hub Islam Internasional" — termasuk terjemahan Analerta Konfusius (论语) ke bahasa Arab dan buku "Sejarah Peradaban Islam"</div>
+
+<p>Panel keempat mengungkap sesuatu yang bahkan lebih mengejutkan. Shanghai bukan cuma tempat tinggal Muslim — Shanghai adalah <strong>hub intelektual</strong> antara China dan dunia Islam. Tercatat, <span class="person">Ha Decheng</span> dikirim ke Colombo, Sri Lanka, pada tahun 1913 untuk membangun jaringan pendidikan Islam. Dan yang paling mengagumkan: mereka menerjemahkan <strong>Analerta Konfusius (论语) ke bahasa Arab</strong> — dan menerjemahkan <strong>"Sejarah Peradaban Islam"</strong> ke bahasa Tionghoa.</p>
+
+<p>Dua arah. Dua budaya. Satu jembatan.</p>
+
+<p>Aku keluar dari ruang pameran itu dengan perasaan yang berbeda. Ini bukan sekadar sejarah tentang "Muslim yang tinggal di China." Ini sejarah tentang manusia yang hidir di persimpangan dua peradaban besar — dan memilih untuk membangun jembatan, bukan tembok.</p>
+
+<!-- === BAB VIII === -->
+<h2><span class="num">VIII</span> Pelajaran dari 1.400 Tahun</h2>
 
 <p>Ada sesuatu yang bisa kita pelajari dari kisah Islam di China — sesuatu yang relevan untuk kita di mana pun.</p>
 
@@ -426,10 +457,10 @@ body {
 
 <p><strong>Ketiga</strong>, kekuasaan datang dan pergi. Dinasti Tang, Song, Yuan, Ming, Qing — semuanya naik dan jatuh. Tapi Muslim tetap ada. Mereka tidak bergantung pada satu rezim. Mereka beradaptasi. Mereka bertahan. Dan 1.400 tahun kemudian, mereka masih sholat Jumat di masjid yang sama.</p>
 
-<p><strong>Keempat</strong>, kontribusi Muslim di China bukan sekadar "ada." Mereka <em>membangun</em> China. Dari menteri keuangan Kubilai Khan sampai laksamana Zheng He. Dari astronomi sampai navigasi. Dari perdagangan sampai diplomasi. Muslim bukan penonton — mereka adalah aktor utama dalam sejarah China.</p>
+<p><strong>Keempat</strong>, kontribusi Muslim di China bukan sekadar "ada." Mereka <em>membangun</em> China. Dari menteri keuangan Kubilai Khan sampai laksamana Zheng He. Dari astronomi sampai navigasi. Dari perdagangan sampai diplomasi. Dari silat sampai seni lentera. Dari dialog antar-agama sampai terjemahan Konfusius ke bahasa Arab. Muslim bukan penonton — mereka adalah aktor utama dalam sejarah China.</p>
 
 <!-- === PENUTUP === -->
-<h2><span class="num">VIII</span> Ketika Aku Keluar Masjid</h2>
+<h2><span class="num">IX</span> Ketika Aku Keluar Masjid</h2>
 
 <p>Aku berjalan keluar dari Masjid Pudong. Di luar, Shanghai berderu. Mobil-mobil listrik meluncur tanpa suara. Neon-neon menyala di gedung pencakar langit. Metro bawah tanah membawa jutaan orang setiap hari.</p>
 
@@ -453,8 +484,7 @@ body {
 <p>Dan semuanya dimulai dari satu rombongan pedagang Arab yang datang dengan unta penuh kain wangi, 1.400 tahun yang lalu.</p>
 
 <div class="closing">
-  <div class="quote">"Kami bukan pendatang. Kami adalah China."</div>
-  <div class="source">— Ma Zhengde, 78 tahun, Muslim Hui Shanghai</div>
+  <div class="quote">Islam tidak menaklukkan China.<br>Islam datang ke China — dan China membuka pintunya.</div>
 </div>
 
 <p class="end-mark">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
@@ -464,6 +494,7 @@ body {
 <div class="footer">
   <p>Ditulis oleh <strong>Alya Anjani</strong> ✨ untuk Andrew</p>
   <p>Terinspirasi dari sholat Jumat di Masjid Pudong, Shanghai — September 2026</p>
+  <p>Sumber foto pameran: Dokumentasi pribadi di dalam kompleks Masjid Pudong (上海浦东清真寺)</p>
   <p style="margin-top:8px;">Referensi: <em>Leslie (1986), Lipman (1997), Gladney (1991), Ibn Battuta's Rihla, Marco Polo's Il Milione</em></p>
 </div>
 
