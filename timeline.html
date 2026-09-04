@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islam di Kekaisaran China — Timeline & Referensi</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a1a; color: #e0e0e0; min-height: 100vh; }
+
+.header { background: linear-gradient(135deg, #1a3a2a 0%, #0d2137 100%); padding: 48px 24px; text-align: center; border-bottom: 3px solid #c8a84e; }
+.header h1 { font-size: 2.4em; color: #c8a84e; margin-bottom: 8px; }
+.header .arabic { font-size: 1.6em; color: #7fb87f; margin-bottom: 8px; }
+.header p { color: #a0c0a0; font-size: 1.1em; max-width: 700px; margin: 0 auto; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+/* === TIMELINE === */
+.timeline { position: relative; padding: 20px 0; }
+.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #c8a84e, #2d7a4f, #c8a84e); transform: translateX(-50%); }
+
+.era { position: relative; margin-bottom: 48px; display: flex; align-items: flex-start; }
+.era:nth-child(odd) { flex-direction: row; }
+.era:nth-child(even) { flex-direction: row-reverse; }
+
+.era-content { width: 44%; padding: 20px; border-radius: 12px; position: relative; }
+.era:nth-child(odd) .era-content { margin-right: 6%; text-align: right; }
+.era:nth-child(even) .era-content { margin-left: 6%; text-align: left; }
+
+.era-dot { position: absolute; left: 50%; top: 28px; width: 20px; height: 20px; border-radius: 50%; background: #c8a84e; border: 3px solid #0a0a1a; transform: translateX(-50%); z-index: 2; }
+
+.era-content { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a2a 100%); border: 1px solid #2a4a3a; }
+.era-content:hover { border-color: #c8a84e; transform: translateY(-2px); transition: all 0.3s; }
+
+.era-year { display: inline-block; background: #c8a84e; color: #0a0a1a; font-weight: 700; padding: 3px 12px; border-radius: 20px; font-size: 0.85em; margin-bottom: 8px; }
+.era-dynasty { font-size: 1.3em; color: #7fbf7f; font-weight: 700; margin-bottom: 4px; }
+.era-subtitle { color: #c8a84e; font-size: 0.9em; margin-bottom: 10px; }
+.era-text { color: #b0c4b0; font-size: 0.92em; line-height: 1.6; }
+.era-highlight { background: rgba(200,168,78,0.15); border-left: 3px solid #c8a84e; padding: 8px 12px; margin-top: 10px; border-radius: 4px; font-size: 0.88em; color: #d4c080; }
+.era:nth-child(even) .era-highlight { border-left: none; border-right: 3px solid #c8a84e; }
+
+.person { display: inline-block; background: rgba(127,184,127,0.2); color: #7fbf7f; padding: 2px 8px; border-radius: 4px; font-weight: 600; margin: 2px 0; }
+
+/* === STAT BOX === */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 40px 0; }
+.stat-card { background: linear-gradient(135deg, #1a2a1a, #0d1a2a); border: 1px solid #2a4a3a; border-radius: 12px; padding: 20px; text-align: center; }
+.stat-card:hover { border-color: #c8a84e; }
+.stat-num { font-size: 2.2em; color: #c8a84e; font-weight: 700; }
+.stat-label { color: #7fbf7f; font-size: 0.9em; margin-top: 4px; }
+
+/* === JALUR MASUK MAP === */
+.routes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
+.route-card { background: linear-gradient(135deg, #1a2a1a, #0d1a2a); border: 1px solid #2a4a3a; border-radius: 12px; padding: 24px; }
+.route-card h3 { color: #c8a84e; margin-bottom: 12px; font-size: 1.1em; }
+.route-card ul { list-style: none; padding: 0; }
+.route-card li { padding: 6px 0; color: #b0c4b0; border-bottom: 1px solid rgba(42,74,58,0.5); font-size: 0.92em; }
+.route-card li:last-child { border-bottom: none; }
+.route-card li::before { content: '→ '; color: #c8a84e; }
+
+/* === REFERENSI === */
+.ref-section { margin-top: 48px; }
+.ref-section h2 { color: #c8a84e; font-size: 1.6em; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #2a4a3a; }
+.ref-category { margin-bottom: 24px; }
+.ref-category h3 { color: #7fbf7f; font-size: 1.1em; margin-bottom: 12px; }
+.ref-list { list-style: none; padding: 0; }
+.ref-list li { padding: 10px 16px; margin-bottom: 8px; background: rgba(26,42,26,0.5); border-radius: 8px; border-left: 3px solid #2a4a3a; font-size: 0.9em; line-height: 1.5; color: #b0c4b0; }
+.ref-list li:hover { border-left-color: #c8a84e; }
+.ref-list .author { color: #c8a84e; font-weight: 600; }
+.ref-list .title { color: #7fbf7f; font-style: italic; }
+.ref-list .note { color: #8a9a8a; font-size: 0.85em; display: block; margin-top: 4px; }
+
+/* === FOOTER === */
+.footer { text-align: center; padding: 32px; color: #5a6a5a; font-size: 0.85em; margin-top: 40px; border-top: 1px solid #1a2a1a; }
+
+@media (max-width: 768px) {
+  .timeline::before { left: 20px; }
+  .era, .era:nth-child(even) { flex-direction: row; }
+  .era-content, .era:nth-child(odd) .era-content, .era:nth-child(even) .era-content { width: calc(100% - 50px); margin-left: 50px; margin-right: 0; text-align: left; }
+  .era-dot { left: 20px; }
+  .era:nth-child(even) .era-highlight { border-left: 3px solid #c8a84e; border-right: none; }
+  .routes { grid-template-columns: 1fr; }
+  .header h1 { font-size: 1.6em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div classarabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <h1>🕌 Islam di Kekaisaran China</h1>
+  <p>Perjalanan 1.400 tahun Islam masuk, tumbuh, dan berkembang di daratan China — dari era Sahabat Nabi hingga Dinasti Qing</p>
+</div>
+
+<div class="container">
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-num">651 M</div>
+    <div class="stat-label">Tahun Resmi Islam Masuk China</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">1.400+</div>
+    <div class="stat-label">Tahun Sejarah Islam di China</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">~30 Juta</div>
+    <div class="stat-label">Muslim di China Sekarang</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">10 Etnis</div>
+    <div class="stat-label">Etnis Muslim Resmi Tiongkok</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">35.000+</div>
+    <div class="stat-label">Masjid di Seluruh China</div>
+  </div>
+</div>
+
+<!-- JALUR MASUK -->
+<div class="routes">
+  <div class="route-card">
+    <h3>🐪 Jalur Darat — Silk Road</h3>
+    <ul>
+      <li>Arab → Persia → Asia Tengah → Xinjiang → Chang'an (Xi'an)</li>
+      <li>Pedagang, ulama, duta diplomatik</li>
+      <li>Bawa rempah, kain, unta, kitab</li>
+      <li>Perjalanan: 6-12 bulan</li>
+      <li>Favorit era: Tang, Yuan</li>
+    </ul>
+  </div>
+  <div class="route-card">
+    <h3>🚢 Jalur Laut — Maritime Silk Road</h3>
+    <ul>
+      <li>Arab/Yaman → India → Malaka → Guangzhou/Quanzhou</li>
+      <li>Pedagang kaya, pelaut, ahli navigasi</li>
+      <li>Bawa rempah, mutiara, kain sutra</li>
+      <li>Perjalanan: 3-6 bulan (tergantung monsun)</li>
+      <li>Favorit era: Song, Ming</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<h2 style="color:#c8a84e; text-align:center; margin-bottom:32px; font-size:1.5em;">📅 Timeline Interaktif</h2>
+
+<div class="timeline">
+
+  <!-- 1. Era Awal -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">616-651 M</span>
+      <div class="era-dynasty">Era Sahabat Nabi</div>
+      <div class="era-subtitle">Kontak Pertama Islam-China</div>
+      <div class="era-text">
+        Gelombang pertama pedagang Muslim Arab & Persia tiba di pesisir selatan China melalui jalur laut. 
+        <span class="person">Sa'ad bin Abi Waqqas</span> dikirim sebagai duta ke Kaisar Tang.
+      </div>
+      <div class="era-highlight">
+        📌 <strong>651 M</strong> — Duta resmi Khulafaur Rasyidin ke Dinasti Tang. Tahun resmi Islam masuk China.
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+  <!-- 2. Dinasti Tang -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">618-907 M</span>
+      <div class="era-dynasty">Dinasti Tang 唐朝</div>
+      <div class="era-subtitle">Era Keemasan Jalur Sutra</div>
+      <div class="era-text">
+        Pedagang Muslim Arab & Persia menetap di Guangzhou, Quanzhou, Hangzhou. Disebut <strong>Fanke (蕃客)</strong> — "tamu asing". Diizinkan berdagang, bangun masjid, dan punya kawasan sendiri.
+      </div>
+      <div class="era-highlight">
+        🕌 <strong>Masjid Huaisheng (怀圣寺)</strong> di Guangzhou — konon dibangun 627 M, masjid tertua di China. Muslim hidup berdampingan dengan damai.
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+  <!-- 3. Dinasti Song -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">960-1279 M</span>
+      <div class="era-dynasty">Dinasti Song 宋朝</div>
+      <div class="era-subtitle">Integrasi & Asimilasi Dimulai</div>
+      <div class="era-text">
+        Muslim makin banyak dan mulai menikah dengan orang Tionghoa → lahir komunitas <strong>Hui (回族)</strong>. Quanzhou jadi pelabuhan terbesar dunia. Muslim jadi ahli navigasi, astronomi, dan perdagangan.
+      </div>
+      <div class="era-highlight">
+        🌊 Quanzhou era Song = pelabuhan tersibuk di dunia. Mayoritas pedagang asing = Muslim Arab & Persia.
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+  <!-- 4. Dinasti Yuan -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">1271-1368 M</span>
+      <div class="era-dynasty">Dinasti Yuan 元朝 (Mongol)</div>
+      <div class="era-subtitle">⭐ Era Keemasan Islam di China</div>
+      <div class="era-text">
+        <span class="person">Kubilai Khan</span> sangat terbuka pada Muslim! Status <strong>Semu (色目)</strong> — lebih tinggi dari Han. Muslim diangkat jadi pejabat tinggi, menteri, ilmuwan.
+      </div>
+      <div class="era-highlight">
+        👤 <span class="person">Sayyid Ajall</span> — gubernur Yunnan, sebarkan Islam ke Yunnan<br>
+        👤 <span class="person">Ahmad Fanakati</span> — menteri keuangan Kubilai Khan<br>
+        👤 <span class="person">Jamal al-Din</span> — pimpinan biro astronomi
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+  <!-- 5. Dinasti Ming -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">1368-1644 M</span>
+      <div class="era-dynasty">Dinasti Ming 明朝</div>
+      <div class="era-subtitle">Asimilasi Besar & Laksamana Zheng He</div>
+      <div class="era-text">
+        Muslim Hui mulai berasimilasi — pakai nama Tionghoa, pakaian Tionghoa, tapi tetap Muslim. Kaisar Zhu Yuanzhang konon punya darah Muslim (debatable). Masjid dibangun resmi oleh pemerintah.
+      </div>
+      <div class="era-highlight">
+        ⛵ <span class="person">Laksamana Zheng He (郑和)</span> — Muslim Hui, komandan armada terbesar dunia! 7 ekspedisi (1405–1433), sampai Afrika & Timur Tengah. Bukti Muslim punya posisi sangat tinggi.
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+  <!-- 6. Dinasti Qing -->
+  <div class="era">
+    <div class="era-content">
+      <span class="era-year">1644-1912 M</span>
+      <div class="era-dynasty">Dinasti Qing 清朝 (Manchu)</div>
+      <div class="era-subtitle">Tensi, Pemberontakan & Ketahanan</div>
+      <div class="era-text">
+        Dinasti Manchu mulai membatasi hak Muslim. Terjadi beberapa pemberontakan besar, tapi Muslim tetap bertahan dan berkembang di berbagai wilayah.
+      </div>
+      <div class="era-highlight">
+        ⚔️ Pemberontakan Dungan (1862–1877) — Xinjiang & Gansu<br>
+        ⚔️ Pemberontakan Panthay (1856–1873) — Yunnan<br>
+        Tapi Muslim tetap bertahan hingga kini!
+      </div>
+    </div>
+    <div class="era-dot"></div>
+  </div>
+
+</div><!-- /timeline -->
+
+<!-- 10 ETNIS MUSLIM -->
+<div style="margin-top:48px;">
+  <h2 style="color:#c8a84e; text-align:center; margin-bottom:24px; font-size:1.4em;">🏘️ 10 Etnis Muslim Resmi Tiongkok</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:12px;">
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">回族</div><div class="stat-label">Hui — ~10 juta (terbesar)</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">维吾尔</div><div class="stat-label">Uyghur — Xinjiang</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">哈萨克</div><div class="stat-label">Kazakh</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">东乡</div><div class="stat-label">Dongxiang</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">柯尔克孜</div><div class="stat-label">Kirghiz</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">撒拉</div><div class="stat-label">Salar</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">塔吉克</div><div class="stat-label">Tajik</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">乌孜别克</div><div class="stat-label">Uzbek</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">保安</div><div class="stat-label">Bonan</div></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.2em;">塔塔尔</div><div class="stat-label">Tatar</div></div>
+  </div>
+</div>
+
+<!-- REFERENSI -->
+<div class="ref-section">
+  <h2>📚 Referensi & Sumber Bacaan</h2>
+
+  <div class="ref-category">
+    <h3>📖 Buku Utama (Akademis)</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Leslie, Donald Daniel.</span> <span class="title">Islam in Traditional China: A Short History to 1800.</span> Canberra: Canberra College of Advanced Education, 1986.
+        <span class="note">Standar akademis sejarah Islam di China pra-modern. Sangat detail.</span>
+      </li>
+      <li>
+        <span class="author">Israeli, Raphael.</span> <span class="title">Islam in China: A Critical Bibliography.</span> Westport: Greenwood Press, 1984.
+        <span class="note">Bibliografi kritis — peta literatur Islam-China.</span>
+      </li>
+      <li>
+        <span class="author">Lipman, Jonathan N.</span> <span class="title">Familiar Strangers: A History of Muslims in Northwest China.</span> Seattle: University of Washington Press, 1997.
+        <span class="note">Fokus Muslim Hui & Uyghur di Xinjiang/Gansu. Sangat recommended.</span>
+      </li>
+      <li>
+        <span class="author">Gladney, Dru C.</span> <span class="title">Muslim Chinese: Ethnic Nationalism in the People's Republic.</span> Cambridge: Harvard University Press, 1991 (edisi ke-2: 1996).
+        <span class="note">Klasik! Studi etnografi komunitas Muslim China modern.</span>
+      </li>
+      <li>
+        <span class="author">Allès, Elisabeth.</span> <span class="title">Musulmans de Chine: Une anthropologie des Hui du Henan.</span> Paris: EHESS, 2000.
+        <span class="note">Studi antropologi Muslim Hui di Henan. Berbahasa Prancis.</span>
+      </li>
+      <li>
+        <span class="author">Dillon, Michael.</span> <span class="title">China's Muslim Hui Community: Migration, Settlement and Sects.</span> Richmond: Curzon Press, 1999.
+        <span class="note">Migrasi dan sekte-sekte Muslim Hui.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ref-category">
+    <h3>📜 Sumber Primer & Klasik</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Ibn Battuta.</span> <span class="title">Rihla (Perjalanan Ibn Battuta).</span> ~1355 M.
+        <span class="note">Catatan perjalanan Ibn Battuta ke China. Sumber primer kontemporer.</span>
+      </li>
+      <li>
+        <span class="author">Marco Polo.</span> <span class="title">Il Milione (The Travels of Marco Polo).</span> ~1300 M.
+        <span class="note">Deskripsi komunitas Muslim di China era Mongol.</span>
+      </li>
+      <li>
+        <span class="author">Rashid al-Din Hamadani.</span> <span class="title">Jami' al-Tawarikh (Compendium of Chronicles).</span> ~1307 M.
+        <span class="note">Sejarah resmi era Mongol — banyak info tentang Muslim di Yuan.</span>
+      </li>
+      <li>
+        <span class="author">Pigafetta, Antonio.</span> <span class="title">Magellan's Voyage.</span> ~1525 M.
+        <span class="note">Catatan tentang komunitas Muslim di pesisir China era Ming.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ref-category">
+    <h3>🕌 Masjid & Arsitektur</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Thiele, Dagmar.</span> <span class="title">Der Islam in China: Grundzüge seiner Geschichte, seiner Lehren und Praxis in der Volksrepublik China.</span> Bonn: Verlag für Islam und Orient, 1985.
+        <span class="note">Arsitektur masjid dan praktik Islam di China.</span>
+      </li>
+      <li>
+        <span class="author">Broomhall, Marshall.</span> <span class="title">Islam in China: A Neglected Problem.</span> London: Morgan & Scott, 1910.
+        <span class="note">Klasik awal! Banyak ilustrasi masjid dan komunitas Muslim. Public domain.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ref-category">
+    <h3>📊 Jurnal & Artikel Akademis</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Benite, Zvi Ben-Dor.</span> <span class="title">"From 'Literati' to 'Ulama': The Origins of Muslim Lites in China."</span> <em>Journal of the Economic and Social History of the Orient</em>, Vol. 53, 2010, hlm. 497-531.
+        <span class="note">Asal-usul elite Muslim terpelajar di China.</span>
+      </li>
+      <li>
+        <span class="author">Ben-Dor Benite, Zvi.</span> <span class="title">The Dao of Muhammad: A Cultural History of Muslims in Late Imperial China.</span> Cambridge: Harvard University Asia Center, 2005.
+        <span class="note">Bagaimana Muslim China memadukan Islam dan budaya Konfusian.</span>
+      </li>
+      <li>
+        <span class="author">Atwill, David G.</span> <span class="title">The Chinese Sultanate: Islam, Ethnicity, and the Panthay Rebellion in Southwest China, 1856-1873.</span> Stanford: Stanford University Press, 2005.
+        <span class="note">Studi definitif Pemberontakan Panthay di Yunnan.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ref-category">
+    <h3>🌐 Sumber Online & Database</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Encyclopaedia of Islam (3rd Edition).</span> Entry: "China" — Brill Online.
+        <span class="note">Ensiklopedia rujukan utama studi Islam. Perlu akses institusi.</span>
+      </li>
+      <li>
+        <span class="author">China Heritage Quarterly.</span> Australian National University — anu.edu.au
+        <span class="note">Artikel tentang warisan budaya China termasuk komunitas Muslim.</span>
+      </li>
+      <li>
+        <span class="author">Islamicity.com.</span> "Islam in China: A Brief History."
+        <span class="note">Ringkasan populer tapi berbasis sumber akademis.</span>
+      </li>
+      <li>
+        <span class="author">UNESCO.</span> Maritime Silk Road — Intangible Cultural Heritage.
+        <span class="note">Kontekstualisasi jalur laut yang membawa Islam ke China.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ref-category">
+    <h3>🇮🇩 Referensi Bahasa Indonesia</h3>
+    <ul class="ref-list">
+      <li>
+        <span class="author">Lapidus, Ira M.</span> <span class="title">Sejarah Sosial Dunia Islam.</span> Terj. Tim INSIST. Yogyakarta: IRCiSoD, 2016.
+        <span class="note">Bab tentang Islam di Asia Timur termasuk China.</span>
+      </li>
+      <li>
+        <span class="author">Esposito, John L.</span> <span class="title">Ensiklopedia Oxford: Islam Dunia.</span> Terj. Tim LKiS. Yogyakarta: LKiS, 2010.
+        <span class="note">Entri tentang Muslim China dan etnis-nya.</span>
+      </li>
+      <li>
+        <span class="author">Azra, Azyumardi.</span> <span class="title">Jaringan Ulama Timur Tengah dan Kepulauan Nusantara Abad XVII & XVIII.</span> Jakarta: Kencana, 2004.
+        <span class="note">Konteks jaringan ulama yang juga menyinggung China selatan.</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- CATATAN AKHIR -->
+<div style="margin-top:40px; padding:24px; background:linear-gradient(135deg,#1a2a1a,#0d1a2a); border:1px solid #2a4a3a; border-radius:12px;">
+  <h3 style="color:#c8a84e; margin-bottom:12px;">💡 Catatan Penelitian</h3>
+  <p style="color:#b0c4b0; font-size:0.92em; line-height:1.7;">
+    Islam masuk ke China <strong>sangat damai</strong> — lewat pedagang dan duta diplomatik, bukan penaklukan militer. Ini unik dibanding penyebaran Islam di tempat lain. Yang menarik, di era Mongol (sering dianggap "barbar") justru Muslim mencapai posisi paling tinggi di pemerintahan. Dan <span class="person">Laksamana Zheng He</span> membuktikan bahwa Muslim Hui bisa jadi tokoh paling berpengaruh di Dinasti Ming — 87 tahun sebelum Columbus berlayar ke Amerika!
+  </p>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>Referensi disusun oleh Alya Anjani ✨ untuk Andrew | September 2026</p>
+  <p>Berdasarkan sumber akademis & primer. Verifikasi silang disarankan untuk penelitian formal.</p>
+</div>
+
+</body>
+</html>
